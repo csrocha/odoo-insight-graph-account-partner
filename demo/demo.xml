@@ -25,19 +25,19 @@
         <!-- ── Partners — Compositores ────────────────────────────────────── -->
         <record id="demo_partner_piazzolla" model="res.partner">
             <field name="name">Astor Piazzolla</field>
-            <field name="vat">20123456786</field>
+            <field name="vat">200123456786</field>
             <field name="country_id" ref="base.ar"/>
         </record>
 
         <record id="demo_partner_ginastera" model="res.partner">
             <field name="name">Alberto Ginastera</field>
-            <field name="vat">20234567897</field>
+            <field name="vat">200234567897</field>
             <field name="country_id" ref="base.ar"/>
         </record>
 
         <record id="demo_partner_yupanqui" model="res.partner">
             <field name="name">Atahualpa Yupanqui</field>
-            <field name="vat">20345678906</field>
+            <field name="vat">200345678906</field>
             <field name="country_id" ref="base.ar"/>
         </record>
 
@@ -49,7 +49,7 @@
         <!-- ── Partners — Cantantes ───────────────────────────────────────── -->
         <record id="demo_partner_sosa" model="res.partner">
             <field name="name">Mercedes Sosa</field>
-            <field name="vat">27456789019</field>
+            <field name="vat">270456789019</field>
             <field name="country_id" ref="base.ar"/>
         </record>
 
@@ -60,7 +60,7 @@
 
         <record id="demo_partner_zitarrosa" model="res.partner">
             <field name="name">Alfredo Zitarrosa</field>
-            <field name="vat">20567890121</field>
+            <field name="vat">219999830019</field>
             <field name="country_id" ref="base.uy"/>
         </record>
 
