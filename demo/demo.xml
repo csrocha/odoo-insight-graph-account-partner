@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ── Categoría de producto ──────────────────────────────────────── -->
+        <record id="demo_categ_music" model="product.category">
+            <field name="name">Instrumentos Musicales</field>
+        </record>
+
+        <!-- ── Productos ──────────────────────────────────────────────────── -->
+        <record id="demo_product_guitar" model="product.product">
+            <field name="name">Guitarra Fender Stratocaster</field>
+            <field name="detailed_type">service</field>
+            <field name="list_price">1500.0</field>
+            <field name="categ_id" ref="demo_categ_music"/>
+        </record>
+
+        <record id="demo_product_mic" model="product.product">
+            <field name="name">Micrófono Shure SM58</field>
+            <field name="detailed_type">service</field>
+            <field name="list_price">250.0</field>
+            <field name="categ_id" ref="demo_categ_music"/>
+        </record>
+
+        <!-- ── Partners — Compositores ────────────────────────────────────── -->
+        <record id="demo_partner_piazzolla" model="res.partner">
+            <field name="name">Astor Piazzolla</field>
+            <field name="vat">20-12345678-0</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+
+        <record id="demo_partner_ginastera" model="res.partner">
+            <field name="name">Alberto Ginastera</field>
+            <field name="vat">20-23456789-1</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+
+        <record id="demo_partner_yupanqui" model="res.partner">
+            <field name="name">Atahualpa Yupanqui</field>
+            <field name="vat">20-34567890-4</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+
+        <record id="demo_partner_lara" model="res.partner">
+            <field name="name">Agustín Lara</field>
+            <field name="country_id" ref="base.mx"/>
+        </record>
+
+        <!-- ── Partners — Cantantes ───────────────────────────────────────── -->
+        <record id="demo_partner_sosa" model="res.partner">
+            <field name="name">Mercedes Sosa</field>
+            <field name="vat">27-45678901-3</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+
+        <record id="demo_partner_downs" model="res.partner">
+            <field name="name">Lila Downs</field>
+            <field name="country_id" ref="base.mx"/>
+        </record>
+
+        <record id="demo_partner_zitarrosa" model="res.partner">
+            <field name="name">Alfredo Zitarrosa</field>
+            <field name="vat">20-56789012-5</field>
+            <field name="country_id" ref="base.uy"/>
+        </record>
+
+        <!-- ── Facturas: creadas vía Python para tolerar entornos sin CoA ── -->
+        <function model="account.move" name="_create_demo_invoices"/>
+
+    </data>
+</odoo>
