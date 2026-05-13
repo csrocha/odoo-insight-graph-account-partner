@@ -63,10 +63,11 @@
             <field name="type">insight_graph</field>
             <field name="arch" type="xml">
                 <insight_graph>
-                    <node shape="rectangle">
+                    <node shape="diamond">
                         <field name="name" primary="true"/>
                         <field name="move_type"/>
                         <field name="state" color="true"/>
+                        <field name="amount_total"/>
                     </node>
                     <link field="partner_id"  direction="upstream"   model="res.partner"/>
                     <link field="product_ids" direction="downstream" model="product.product"/>
@@ -88,7 +89,32 @@
             <field name="type">insight_graph</field>
             <field name="arch" type="xml">
                 <insight_graph>
-                    <node shape="diamond">
+                    <node shape="rectangle" width="210" height="100">
+                        <div class="d-flex align-items-center h-100 gap-2 p-2" style="background:#f0f4f8;border:2px solid #6c757d;box-sizing:border-box">
+                            <field name="image_128" type="image" class="flex-shrink-0" style="width:52px;height:52px;object-fit:cover;border-radius:4px"/>
+                            <div style="flex:1;min-width:0">
+                                <div class="fw-bold text-truncate" style="font-size:13px;color:#2c3e50">
+                                    <field name="display_name" primary="true"/>
+                                </div>
+                                <div class="text-truncate" style="font-size:11px;color:#6c757d">
+                                    <field name="list_price" type="monetary" currency_field="currency_id"/>
+                                </div>
+                            </div>
+                        </div>
+                    </node>
+                    <link field="product_tmpl_id" direction="upstream" model="product.template"/>
+                </insight_graph>
+            </field>
+        </record>
+
+        <!-- ── insight_graph view: product.template ─────────────────────── -->
+        <record id="view_product_template_insight_graph" model="ir.ui.view">
+            <field name="name">product.template.insight_graph</field>
+            <field name="model">product.template</field>
+            <field name="type">insight_graph</field>
+            <field name="arch" type="xml">
+                <insight_graph>
+                    <node shape="octagon">
                         <field name="display_name" primary="true"/>
                         <field name="categ_id"/>
                     </node>
