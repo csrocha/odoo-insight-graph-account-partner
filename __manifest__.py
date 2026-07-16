@@ -1,6 +1,6 @@
 {
     "name": "Insight Graph: Account & Partner",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Technical",
     "depends": ["insight_graph", "account", "contacts"],
     "data": ["views/insight_graph_views.xml"],
