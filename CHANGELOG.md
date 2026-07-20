@@ -9,6 +9,17 @@ para trazabilidad completa del razonamiento de agentes de IA.
 
 ---
 
+## [17.0.1.0.1] - 2026-07-16
+
+### Modificado
+
+- `AGENTS.md`: reorganizacion de `Update documentation` y sincronizacion de la
+  referencia de seccion tras el reordenamiento.
+- `DESIGN.md`: nuevo documento con arquitectura, vistas `insight_graph` por
+  modelo, controladores, integracion con acciones existentes y decisiones de
+  diseno del modulo.
+- Merge de `develop` a `main` para el release de esta version.
+
 ## [17.0.1.0.0] - 2026-05-18
 
 ### Prompt
