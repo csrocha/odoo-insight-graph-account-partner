@@ -9,6 +9,24 @@ para trazabilidad completa del razonamiento de agentes de IA.
 
 ---
 
+## [17.0.1.0.2] - 2026-10-03
+
+### Prompt
+
+> Sigue con los AGENTS.md
+>
+> (continuación de: "Arregla toda la documentación que haya quedado pendiente de sincronizar")
+
+### Discusión de diseño
+
+- **Línea de versión**: repetía la versión del manifest y quedaba atrasada en cada ship (55 de 58 addons la tenían desactualizada, varias en 17.0.1.0.0). Se reemplaza por una referencia a `__manifest__.py` en vez de corregir el número, para que no vuelva a desincronizarse.
+
+### Cambiado
+
+- `AGENTS.md`: la línea `**Version actual**` pasa a remitir a `__manifest__.py` en vez de repetir el número.
+
+---
+
 ## [17.0.1.0.1] - 2026-07-16
 
 ### Modificado

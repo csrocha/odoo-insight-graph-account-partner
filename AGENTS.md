@@ -2,7 +2,7 @@
 
 **Modulo**: Insight Graph: Account & Partner
 **Proposito**: Vista grafo para cuentas contables y partners en Odoo.
-**Version actual**: 17.0.1.0.0 | **Entorno**: Odoo 17, rama `develop`
+**Versión**: la de `__manifest__.py` (no se repite acá) | **Entorno**: Odoo 17, rama `develop`
 
 Para las directrices generales de desarrollo de modulos Odoo en Observatorio PyME,
 ver el [AGENTS.md de fop_odoo_theme](https://github.com/observatoriopyme/fop_odoo_theme/blob/develop/AGENTS.md).
