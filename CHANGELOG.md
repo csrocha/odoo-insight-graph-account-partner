@@ -9,6 +9,25 @@ para trazabilidad completa del razonamiento de agentes de IA.
 
 ---
 
+## [17.0.1.0.3] - 2026-10-20
+
+### Prompt
+
+> Reordena la vista de insight_graph al final de la lista de vistas, para que no sea la vista por defecto.
+
+### Discusión de diseño
+
+- **Causa raíz**: `insight_graph` ya estaba al final del `view_mode`, pero `ir.actions.act_window._compute_views` arma `views` poniendo primero los `view_ids` (`ir.actions.act_window.view`) y recién después los modos del `view_mode` que no tienen registro. `account.action_move_out_invoice_type` no tiene `view_ids` en core, así que `act_view_account_move_insight_graph` (secuencia 99) era el único y quedaba primero: Facturas abría en el grafo. En contactos no pasa porque core ya define kanban/tree/form con secuencias 0-2.
+- **Alternativa A**: agregar registros `act_window.view` para tree/kanban/form en la acción de facturas — descartada: más registros sobre una acción ajena, y fijar `view_id` duplicaría lo que core ya resuelve con `view_id` de la acción.
+- **Alternativa B (elegida)**: eliminar el `act_window.view` de facturas y dejar `insight_graph` al final del `view_mode`; la vista se resuelve por tipo, ya que es la única `insight_graph` de `account.move`.
+- **Además**: el override del `view_mode` usaba `list` en vez de `tree` y dejaba afuera `activity`. Con `list`, el `view_id` de core (`view_out_invoice_tree`, tipo `tree`) no coincidía con ningún modo y se perdía la lista específica de facturas. Se restaura el `view_mode` de core más `insight_graph`.
+
+### Corregido
+
+- `views/insight_graph_views.xml`: eliminado `act_view_account_move_insight_graph`; el `view_mode` de `account.action_move_out_invoice_type` pasa a `tree,kanban,form,activity,insight_graph`.
+
+---
+
 ## [17.0.1.0.2] - 2026-10-03
 
 ### Prompt
